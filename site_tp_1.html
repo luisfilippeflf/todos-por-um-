@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TP1 — Início</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <meta name="description" content="TP1 — site exemplo, clean e responsivo" />
+  <style>
+    :root{
+      --bg:#0f1724; /* navy dark */
+      --card:#0b1220;
+      --accent:#7c3aed; /* purple */
+      --glass: rgba(255,255,255,0.04);
+      --muted: #9aa4b2;
+      --radius:14px;
+      --maxw:1100px;
+      --gap:24px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#07101a 0%, #071b2a 60%); color:#e6eef8}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:36px 20px}
+
+    /* Navbar */
+    header{backdrop-filter: blur(6px);padding:18px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:grid;place-items:center;font-weight:800;font-family:'Playfair Display',serif;color:#07101a}
+    nav ul{display:flex;gap:14px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a.button{padding:10px 14px;border-radius:10px;background:var(--glass);font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding:48px 0}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    .kicker{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));font-size:13px;color:var(--muted)}
+    h1{font-family:'Playfair Display',serif;font-size:40px;margin:6px 0 0}
+    p.lead{color:var(--muted);line-height:1.6;margin:12px 0 0}
+    .cta{display:flex;gap:12px;margin-top:18px}
+    .btn{padding:12px 16px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#06b6d4);color:#021018}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Cards */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .card h3{margin:6px 0;font-size:18px}
+    .card p{color:var(--muted);font-size:14px}
+
+    footer{border-top:1px solid rgba(255,255,255,0.03);margin-top:48px;padding:28px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Contact form */
+    form{display:grid;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit}
+    textarea{min-height:120px}
+
+    /* Responsive */
+    @media (min-width:900px){
+      .hero-grid{grid-template-columns:1fr 420px;align-items:center}
+      h1{font-size:48px}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:899px){
+      .grid-3{grid-template-columns:1fr}
+      .logo{width:48px;height:48px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">TP1</div>
+          <div>
+            <div style="font-weight:800">TP1</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">Soluções &amp; Exemplo</div>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#contact" class="button">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-grid">
+          <div>
+            <span class="kicker">Bem-vindo ao TP1</span>
+            <h1>Criando experiências digitais elegantes — TP1</h1>
+            <p class="lead">Este é um site de exemplo rápido para o projeto "TP1". Layout responsivo, componentes simples e pronto para personalizar — troque textos, cores e imagens conforme desejar.</p>
+            <div class="cta">
+              <button class="btn btn-primary" onclick="scrollToSection('contact')">Solicitar orçamento</button>
+              <button class="btn btn-ghost" onclick="downloadHTML()">Baixar HTML</button>
+            </div>
+
+            <div class="grid-3" style="margin-top:24px">
+              <div class="card">
+                <h3>Design responsivo</h3>
+                <p>Interface que se ajusta bem em celular, tablet e desktop.</p>
+              </div>
+              <div class="card">
+                <h3>Fácil de editar</h3>
+                <p>HTML + CSS em um arquivo único: ideal para experimentação rápida.</p>
+              </div>
+              <div class="card">
+                <h3>Deploy rápido</h3>
+                <p>Pronto para enviar ao Netlify, Vercel, GitHub Pages ou qualquer hospedagem estática.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="card" style="align-self:start">
+            <h3>Contato rápido</h3>
+            <p class="lead" style="margin-top:8px">Preencha e envie — este formulário é apenas demonstrativo (não envia e-mail).</p>
+            <form onsubmit="event.preventDefault();alert('Obrigado — formulário de demonstração.');">
+              <input type="text" placeholder="Nome" required />
+              <input type="email" placeholder="E-mail" required />
+              <textarea placeholder="Mensagem"></textarea>
+              <button class="btn btn-primary" type="submit">Enviar</button>
+            </form>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:32px">
+        <div class="card">
+          <h2>Sobre o TP1</h2>
+          <p style="color:var(--muted)">TP1 é um site modelo criado para demonstrar um layout limpo e profissional. Use este repositório como base — adicione suas imagens, altere textos e conecte-o a back-ends quando precisar.</p>
+        </div>
+      </section>
+
+      <section id="services" style="margin-top:24px">
+        <div class="card">
+          <h2>Serviços</h2>
+          <ul style="color:var(--muted);line-height:1.8">
+            <li>Desenvolvimento Web</li>
+            <li>Design de Interface</li>
+            <li>Consultoria de UX</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:24px">
+        <div class="card">
+          <h2>Fale com a gente</h2>
+          <p style="color:var(--muted)">Email: <strong>contato@tp1.exemplo</strong> — Telefone: <strong>+55 (11) 9XXXX-XXXX</strong></p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> TP1 — Todos os direitos reservados</div>
+      <div style="font-size:13px;color:var(--muted)">Feito com ♥ — Personalize este site conforme precisar</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    function downloadHTML(){
+      const blob = new Blob([document.documentElement.outerHTML],{type:'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'tp1.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+</body>
+</html>
